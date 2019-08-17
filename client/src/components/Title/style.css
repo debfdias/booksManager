@@ -1,0 +1,30 @@
+.jumbotron {
+    background-image: url('./book-bindings-book-series-books-1560093.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    color: wheat;
+    text-shadow: 2px 2px black;
+}
+
+.lead {
+    font-size: 2.5em;
+}
+
+@media only screen and (max-width: 960px) {
+    .display-4 {
+        font-size: 2.5em;
+    }
+    .lead {
+        font-size: 1.5em;
+    }
+}
+@media only screen and (max-width: 540px) {
+    .display-4 {
+        font-size: 1.5em;
+    }
+    .lead {
+        font-size: 1.25em;
+    }
+}

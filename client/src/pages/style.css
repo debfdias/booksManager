@@ -1,0 +1,16 @@
+.description {
+    max-height: 100px;
+}
+
+@media only screen and (max-width: 540px) {
+    .book-title {
+        font-size: .70em
+    }
+    .description {
+        max-height: 80px;
+        font-size: .6em;
+    }
+    .btn {
+        font-size: .65em
+    }
+}
