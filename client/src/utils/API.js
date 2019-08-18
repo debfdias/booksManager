@@ -10,8 +10,8 @@ export default {
   deleteFavorite(bookId) {
     return axios.delete("/API/books/" + bookId)
   },
-  editFavorite(bookId) {
-    return axios.put("/API/books/" + bookId)
+  editFavorite(bookId, bookData) {
+    return axios.put("/API/books/" + bookId, bookData)
   },
   showFavorite(bookId) {
     return axios.get("/API/books/" + bookId)
