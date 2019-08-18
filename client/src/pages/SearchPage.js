@@ -79,7 +79,7 @@ class SearchPage extends Component {
                   <li className="media my-4 rounded shadow p-2" key={book.id}>
                     <img src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : ""} className="mr-3" alt="..." />
                     <div className="media-body">
-                      <h5 className="mt-0 mb-1">{book.volumeInfo.title} <span className="font-italic">by {book.volumeInfo.authors.join(", ")}</span></h5>
+                      <h5 className="mt-0 mb-1">{book.volumeInfo.title} <span className="font-italic">por {book.volumeInfo.authors.join(", ")}</span></h5>
                       <p className="overflow-auto description">{book.volumeInfo.description}</p><a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={book.volumeInfo.infoLink}>Ver Reviews</a> {" "}
                       <SaveBtn key="book.id" book={book} savebook={this.saveBook} />
 

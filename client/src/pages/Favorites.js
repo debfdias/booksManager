@@ -61,7 +61,7 @@ class Favorites extends Component {
                       <p className="overflow-auto description">Progresso : {book.progress}</p>
                       <p className="overflow-auto description">Crítica : {book.review}</p>
                       <ViewBtn bookLink={book.link} /> {" "}
-                      <Link to={`/Show/${book._id}`} class="btn btn-success">Editar</Link>&nbsp;
+                      <Link to={`/edit/${book._id}`} class="btn btn-success">Editar</Link>&nbsp;
                       <DeleteBtn onClick={() => this.deleteFavorite(book._id)} />
                     </div>
                   </li>
