@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+﻿import React, { Component } from "react";
 import API from "../utils/API";
 import Search from "../components/Search";
 import Title from "../components/Title";
@@ -34,13 +34,15 @@ class SearchPage extends Component {
 
   saveBook = (book) => {
     console.log("salvando...\n", book);
+
     const bookData = {
       title: book.volumeInfo.title,
       authors: book.volumeInfo.authors,
       description: book.volumeInfo.description,
-      rating: '-',
-      review:' ',
-      progress:'0%',
+      rating: '',
+      review:'',
+      progress:'',
+      date_init:'',
       image: book.volumeInfo.imageLinks.smallThumbnail,
       link: book.volumeInfo.infoLink,
       googleID: book.id

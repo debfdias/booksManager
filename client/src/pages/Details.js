@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+﻿import React, { Component } from "react";
+import ProgressBar from 'react-bootstrap/ProgressBar'
 import API from "../utils/API";
 import Title from "../components/Title";
 import './style.css';
@@ -10,6 +11,7 @@ class Details extends Component {
         rating: '',
         review: '',
         progress: '',
+        date_init: '',
         editing: false
     }
 
@@ -19,6 +21,7 @@ class Details extends Component {
                                          rating: res.data.rating,
                                          review: res.data.review,
                                          progress: res.data.progress,
+                                         date_init: res.data.date_init,
                                          editing: true
             }))
             .catch(err => console.log(err))
@@ -30,13 +33,19 @@ class Details extends Component {
         })
     }
 
+
+    onChangeDate = date => {
+        this.setState({ date });
+    }
+
     onSubmit = async (e) => {
         e.preventDefault();
         
         const updatedBook = {
             rating: this.state.rating,
             review: this.state.review,
-            progress: this.state.progress
+            progress: this.state.progress,
+            date_init: this.state.date_init
         };     
 
         API.editFavorite(this.props.match.params.id, updatedBook)
@@ -59,6 +68,7 @@ class Details extends Component {
                         <img src={this.state.book.image} className="mr-3" alt="..." />
                         <div className="media-body">
                           <h5 className="mt-0 mb-1 book-title">{this.state.book.title} </h5>
+                        <p className="overflow-auto description">{this.state.book.description}</p>
 
                           <form onSubmit={this.onSubmit}>
                           <div className="form-group">
@@ -83,18 +93,28 @@ class Details extends Component {
                                 name="progress"
                                 value={this.state.progress}
                                 required />
+
+                        </div>
+
+                        <div className="form-group">
+			Data de início
+                            <input
+                                type="text"
+                                className="form-control"
+				placeholder="Data de início"
+                                onChange={this.onInputChange}
+                                name="date"
+                                value={this.state.date_init}/>
+                        </div>
+
+                        <div className="form-group">
+                        <ProgressBar animated now= {this.state.progress}  label={`${this.state.progress}%`} /> 
                         </div>
 
                         <div className="form-group">
                         Crítica
-                          <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Sem crítica"
-                                onChange={this.onInputChange}
-                                name="review"
-                                value={this.state.review}
-                                required />
+                        <textarea className="form-control" name="review" placeholder="Sem crítica" value={this.state.review} onChange={this.onInputChange} cols={40} rows={10} required/>
+                         
                         </div>
                         <button className="btn btn-primary">
                             Salvar

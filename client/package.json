@@ -7,9 +7,13 @@
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.6.3",
+    "react-bootstrap": "^1.0.0-beta.11",
+    "react-date-picker": "^7.8.1",
+    "react-datepicker": "^2.8.0",
     "react-dom": "^16.6.3",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "^2.1.1"
+    "react-scripts": "^2.1.1",
+    "react-star-ratings": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

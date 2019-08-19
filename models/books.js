@@ -11,6 +11,7 @@ let BookSchema = new Schema({
     rating: String,
     review: String,
     progress: String,
+    date_init: String,
     image: String,
     link: String,
     googleID: {

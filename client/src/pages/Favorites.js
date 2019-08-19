@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ProgressBar from 'react-bootstrap/ProgressBar'
 import { Link } from 'react-router-dom';
 import API from "../utils/API";
 import Title from "../components/Title";
@@ -58,7 +59,8 @@ class Favorites extends Component {
                     <div className="media-body">
                       <h5 className="mt-0 mb-1 book-title">{book.title}</h5>
                       <p className="overflow-auto description">Nota : {book.rating}</p>
-                      <p className="overflow-auto description">Progresso : {book.progress}</p>
+                      <p className="overflow-auto description">Progresso : {book.progress}% <ProgressBar animated now= {book.progress}  label={`${book.progress}%`} /> </p>
+
                       <p className="overflow-auto description">Crítica : {book.review}</p>
                       <ViewBtn bookLink={book.link} /> {" "}
                       <Link to={`/edit/${book._id}`} class="btn btn-success">Editar</Link>&nbsp;
